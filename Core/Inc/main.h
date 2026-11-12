@@ -61,16 +61,16 @@ void Error_Handler(void);
 #define LED1_GPIO_Port GPIOC
 #define Button4_Pin GPIO_PIN_2
 #define Button4_GPIO_Port GPIOA
-#define LED2_Pin GPIO_PIN_6
-#define LED2_GPIO_Port GPIOA
-#define LED3_Pin GPIO_PIN_11
-#define LED3_GPIO_Port GPIOB
-#define Button3_Pin GPIO_PIN_12
-#define Button3_GPIO_Port GPIOB
-#define Button2_Pin GPIO_PIN_15
-#define Button2_GPIO_Port GPIOB
-#define Button1_Pin GPIO_PIN_9
-#define Button1_GPIO_Port GPIOA
+#define Button3_Pin GPIO_PIN_4
+#define Button3_GPIO_Port GPIOA
+#define Button2_Pin GPIO_PIN_6
+#define Button2_GPIO_Port GPIOA
+#define Button1_Pin GPIO_PIN_0
+#define Button1_GPIO_Port GPIOB
+#define LED2_Pin GPIO_PIN_15
+#define LED2_GPIO_Port GPIOB
+#define LED3_Pin GPIO_PIN_9
+#define LED3_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

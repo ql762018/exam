@@ -97,9 +97,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   //初始化LED灯状态
-  LED1State = GPIO_PIN_RESET;
-  LED2State = GPIO_PIN_RESET;
-  LED3State = GPIO_PIN_RESET;
+  LED1State = GPIO_PIN_SET;
+  LED2State = GPIO_PIN_SET;
+  LED3State = GPIO_PIN_SET;
 
   OLED_Init();
   OLED_Clear();
@@ -144,12 +144,15 @@ int main(void)
       LightTime = Count % 3 + 1;
     }
 
-    LED1State = LED_Off(LED1_GPIO_Port, LED1_Pin, LightTime, StartTime);
+    if(LED1State == GPIO_PIN_RESET)
+    {
+      LED1State = LED_Off(LED1_GPIO_Port, LED1_Pin, LightTime, StartTime);
+    }
 
     //显示LED灯状态和计数值
-    OLED_ShowString(40, 0, LED1State == GPIO_PIN_SET ? "ON" : "OFF", 16, 0);
-    OLED_ShowString(40, 2, LED2State == GPIO_PIN_SET ? "ON" : "OFF", 16, 0);
-    OLED_ShowString(40, 4, LED3State == GPIO_PIN_SET ? "ON" : "OFF", 16, 0);
+    OLED_ShowString(40, 0, LED1State == GPIO_PIN_RESET ? " ON" : "OFF", 16, 0);
+    OLED_ShowString(40, 2, LED2State == GPIO_PIN_RESET ? " ON" : "OFF", 16, 0);
+    OLED_ShowString(40, 4, LED3State == GPIO_PIN_RESET ? " ON" : "OFF", 16, 0);
     OLED_ShowNum(40, 6, LightTime, 1, 16, 0);
     /* USER CODE END WHILE */
 
